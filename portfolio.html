@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karim Design Photography</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0d1117',
+            amber: '#f59e0b'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Jost', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-navy text-white">
+
+<!-- NAV -->
+ <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+
+      <a href="index.html" class="font-serif text-2xl text-navy font-semibold">
+        Karim
+        <span class="block text-xs font-sans text-navy/50 tracking-[0.3em]">
+          DESIGN PHOTOGRAPHY
+        </span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="text-navy/60 hover:text-navy transition">Accueil</a>
+        <a href="portfolio.html" class="text-navy">Portfolio</a>
+        <a href="service.html" class="text-navy font-medium">Services</a>
+        <a href="contact.html" class="text-navy/60 hover:text-navy transition">Contact</a>
+      </div>
+
+      <a
+        href="https://wa.me/221778653038"
+        target="_blank"
+        class="hidden lg:flex px-6 py-3 bg-amber text-navy rounded-full hover:bg-navy hover:text-white transition"
+      >
+        Réserver
+      </a>
+
+      <button
+        onclick="toggleMenu()"
+        class="lg:hidden text-navy"
+      >
+        ☰
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-black/10 px-6 py-6 bg-white">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="text-navy/70">Accueil</a>
+        <a href="portfolio.html" class="text-navy">Portfolio</a>
+        <a href="service.html" class="text-navy">Services</a>
+        <a href="contact.html" class="text-navy/70">Contact</a>
+      </div>
+    </div>
+
+  </nav>
+
+<!-- FILTRES -->
+<section class="pt-28">
+    <div class="flex flex-col justify-center gap-10">
+        <h1 class="font-bold text-4xl text-center text-yellow-600 ">Portfolio</h1>
+        <p class="font-bold text-4xl text-center font-medium text-yellow-600">Mes Travaux</p>
+    </div>
+
+  <div class="flex flex-wrap justify-center gap-3 py-6">
+
+    <button onclick="filter('tous')" class="px-5 py-2 text-xs uppercase rounded-full bg-yellow-500 text-black">
+      Tous
+    </button>
+
+    <button onclick="filter('évenementiel')" class="px-5 py-2 text-xs uppercase rounded-full bg-gray-800 text-white hover:bg-yellow-500 hover:text-black">
+      évenementiel
+    </button>
+
+    <button onclick="filter('shoting')" class="px-5 py-2 text-xs uppercase rounded-full bg-gray-800 text-white hover:bg-yellow-500 hover:text-black">
+      Shoting
+    </button>
+
+    <button onclick="filter('artistique')" class="px-5 py-2 text-xs uppercase rounded-full bg-gray-800 text-white hover:bg-yellow-500 hover:text-black">
+      Artistique
+    </button>
+
+  </div>
+
+  <!-- GRID -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-20">
+
+
+    <!-- évenementiel -->
+    <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="évenementiel">
+      <img src="/images/mariage.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Rencontre 2</h3>
+      </div>
+    </div>
+
+    
+    <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="évenementiel">
+      <img src="/images/mariage1.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Art 1</h3>
+      </div>
+    </div>
+
+    <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="évenementiel">
+      <img src="/images/mariage2.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Art 2</h3>
+      </div>
+    </div>
+       <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="évenementiel">
+      <img src="/images/mariage3.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Rencontre 2</h3>
+      </div>
+    </div>
+    <!-- shoting -->
+       <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/fond.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shoting</h3>
+      </div>
+    </div>
+       <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/shoting.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shoting</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/shoting1.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shooting</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/shoting2.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shoting</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/shoting3.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shoting</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="shoting">
+      <img src="/images/shoting4.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Shoting</h3>
+      </div>
+    </div>
+    <!-- artistique -->
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="artistique">
+      <img src="/images/art.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Artistique</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="artistique">
+      <img src="/images/art1.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Artistique</h3>
+      </div>
+    </div>
+     <div class="card group relative overflow-hidden rounded-xl shadow-lg" data-cat="artistique">
+      <img src="/images/art2.JPG" class="w-full h-90 object-cover group-hover:scale-110 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+        <h3 class="text-white">Artistique</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+<footer class="bg-navy border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-2">
+      <p class="font-serif text-2xl font-semibold text-white tracking-wide">karim</p>
+      <p class="text-white/30 text-xs tracking-widest mb-4">Design Photography</p>
+      <p class="text-white/40 text-sm leading-relaxed max-w-sm mb-6">Photographe & Vidéaste professionnel basé à Dakar, Sénégal. Capturer l'émotion du moment pour en faire un souvenir éternnel.</p>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/in/abdou-karim-ndiaye-6749173ab/" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-amber-DEFAULT flex items-center justify-center transition-colors">
+         <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="www.tiktok.com/@karimdveloppeur" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-amber-DEFAULT flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/18H4iZnoDG/?mibextid=wwXIfr" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-amber-DEFAULT flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-medium mb-4 text-xs uppercase tracking-widest">Navigation</h4>
+      <div class="flex flex-col gap-2">
+        <a href="index.html" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Accueil</a>
+        <a href="service.html?id=evenement" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Événementiel</a>
+        <a href="service.html?id=publicitaire" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Publicitaire</a>
+        <a href="service.html?id=portrait" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Portrait</a>
+        <a href="service.html?id=art" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Artistique</a>
+        <a href="contact.html" class="text-white/35 hover:text-amber-DEFAULT transition-colors text-sm">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-medium mb-4 text-xs uppercase tracking-widest">Contact</h4>
+      <div class="flex flex-col gap-2 text-white/35 text-sm">
+        <a href="tel:+221778653038" class="hover:text-amber-DEFAULT transition-colors">+221 77 865 30 38</a>
+        <a href="mailto:karimndiaye3038@gmail.com" class="hover:text-amber-DEFAULT transition-colors">karimndiaye3038@gmail.com</a>
+        <p>Yeumbeul béne brack, Dakar</p>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/5 py-6 text-center">
+    <p class="text-white/20 text-xs">© 2026 Karim Design Photography. Tous droits réservés.</p>
+  </div>
+</footer>
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+}
+
+function filter(category) {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-cat');
+
+    if (category === 'tous' || cat === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
